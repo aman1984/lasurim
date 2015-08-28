@@ -1,0 +1,286 @@
+.row.header-1 {
+  background-color: @white;
+  min-height: 70px;
+}
+.wrap-main {
+    position: relative;
+}
+.header-1 .container .left-s a {  padding: 17px 0px;
+  display: inline-block;
+  position: relative;
+}
+.header-1 .container .right-s ul li {
+   list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 4px;
+}
+.header-1 .container .right-s ul li:first-child{border-right:1px solid @primary;}
+.header-1 .container .right-s ul{
+  display: block;
+  padding: 12px 0px;
+}
+.header-1 .container .right-s ul li a i{  font-size: 24px;
+  color:@text-color;
+}
+
+.navbar-default {
+  background-color: @nav-bg;
+  position: relative;
+  min-height: 41px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  display: block;
+}
+
+@media (min-width: 768px){
+.navbar-collapse.collapse {
+  display: block!important;
+  height: auto!important;
+  padding-bottom: 0;
+  overflow: visible!important;
+}
+}
+.navbar-collapse {
+  padding-right: 0;
+  padding-left: 0;
+}
+@media (min-width: 768px){
+.navbar-collapse {
+  width: auto;
+  border-top: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+}
+.navbar-nav {
+  float: left;
+  margin: 0;
+  padding-left: 0;
+}
+@media (min-width: 768px){
+.navbar-nav>li {
+  float: left;
+}
+}
+.nav>li {
+  position: relative;
+  display: block;
+  border-right: 1px solid @white;}
+    .nav{list-style: none;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: @nav-hover-bg;
+}
+.navbar-nav>li>a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
+.navbar-nav>li>a:hover{ background-color: @nav-hover-bg;}
+.navbar-nav>li>a>i{  display: block;
+  clear: both;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+}
+.nav>li>a {
+   position: relative;
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer{ background-color: @nav-bg;  min-height: 41px;}
+#footer .container ul li{  display: inline-block;
+  margin-top: 12px;}
+#footer .container ul li a{color: #ffffff;
+  text-decoration: none;
+  border-right: 1px solid #fff;
+  padding: 0 20px;
+}
+#footer .container ul li:last-child a{  padding:0px 0px 0px 20px; border-right: 0px ;}
+#footer .container span{
+  color: #fff;
+  vertical-align: middle;
+  min-height: 41px;
+  text-align: left;
+  padding-top: 12px;
+}
+#footer .container span label{color:@primary;}
+
+// Dashboard-page
+
+.page-dashboard>div>.card{background-color:@card-content-bg;border:1px solid @card-border-color; display:inline-block;min-height:278px;}
+.card-heading{background-color:@card-title-bg;color:@white; font-size: 23px;margin-bottom: 2px;padding: 15px 10px;}
+.card > label {
+    display: inline-block;
+    font-size: 23px;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+.card > label span {color:@primary;}
+.card > span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+  
+}
+.card > span a{  font-size: 52px;   color:@primary; text-decoration: none;}
+
+.card-b-1{
+    background-color: #f9f9f9;
+    float: left;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+ }
+.card-b-1 > span {
+	 display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    margin: 10px 0 0;
+}
+.card-b-1 > span a{ font-size: 24px; color:@primary; text-decoration: none;}
+.card-b-1 > label {
+	   display: inline-block;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;}
+  .card-b-1 > label a{  
+ font-size: 18px;
+ text-decoration: none;
+ color:@text-color;}
+ 
+ .card-box-2{    margin: 27px 2%;
+    width: 46%;}
+ .card-box-3{    margin: 0px 2%;
+    width: 29%;  min-height: 176px;}
+  .card-box-4{    margin: 27px 2%;
+    width: 21%;}   
+  .card-box-3 span a, .card-box-4 span a{font-size:28px;}
+  .card-box-3 span a i, .card-box-4 span a i{display:block;font-size: 64px;}
+  #footer {
+    background-color: #221e1f;
+    bottom: 0;
+    margin: 0;
+    min-height: 41px;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+  
+  @media only screen and (min-width:240px) and (max-width:767px){
+  .my-grid-8, .my-grid-4{width:100%;}
+  .card-box-3 {
+    margin: 10px 3%;
+    min-height: 176px;
+    width: 94%;
+}
+.card-box-4 {
+    margin: 10px 3%;
+    width: 94%;
+}
+.my-grid-6 {
+    text-align: center !important;
+    width: 100%;
+}
+#footer {
+    background-color: #221e1f;
+    bottom: 0;
+    margin: 0;
+    min-height: 41px;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+#footer .container ul li a {
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+ .head-h {color:@primary;
+	font-size:37px;
+	}
+
+
+
+.navbar-default {
+    background-color: #221e1f;
+    border: 1px solid transparent;
+    display: block;
+    margin-bottom: 20px;
+    min-height: auto;
+    position: absolute;
+    width: 104px;
+    z-index: 99999;
+}
+.navbar-default .container{
+	padding:0;
+	}
+	.nav > li > a {
+    text-align: center;
+}
+
+
+
+
+
+
+
+.navbar-default.collapsed {
+    left: -105px;
+    border: none;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+.navbar-default.expanded {
+    left: 0px;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+  	.toggle-btn{display:block !important;
+  	 background: @nav-bg none repeat scroll 0 0;
+    color: #fff;
+    display: block !important;
+    margin-bottom: 15px;
+    min-height: 46px;
+}
+.navbar-default.expanded {
+    left: 0;
+    margin-top: -16px;
+    position: absolute;
+    transition: all 0.5s ease-in-out 0s;
+}
+  	
+  	.header-1 .container .right-s .text-right{ text-align: center !important;}
+  	}
+  .toggle-btn{display:none;}	
+  .toggle-btn span i{font-size:30px; color:@white;}
+  .toggle-btn > span {
+       display: inline-block;
+    font-size: 25px;
+    margin: 5px 5px 5px 10px;
+    vertical-align: middle;
+    color:@white;
+    cursor:pointer;
+}
+.row.login-header {
+    background: @white none repeat scroll 0 0;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    text-align: center;
+}
+.card-b-1 > span a:hover{color:@text-color;}
+.card > span a:hover{color:@text-color;}
