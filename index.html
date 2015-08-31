@@ -3,13 +3,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<base href="/lasurim/index.html#">
+	<!--<base href="/lasurim/index.html#">
     <!-- Custom styles for this template -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
      <link href="css/main.css" rel="stylesheet">
 	  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+<style>
+.controls-fixed{
+  top:0;
+  left:0;
+  padding:10px 15px;
+  position:fixed;
+  width:100%;
+  z-index: 10;
+}
+.controls-fixed2{
+  top:200px;
+  left:0;
+  padding:10px 15px;
+  position:fixed;
+  width:100%;
+  z-index: 10;
+}
+</style>
 </head>
 <body ng-app="lasurim">
 <!---Header top start-->
@@ -31,17 +49,17 @@
 </div>
 <!---Header top end-->
 <!--Nav Start-->
-<div ng-show="show_nav_header" class="toggle-btn">
-<span ng-click="showNav()" ng-show="!open"><i class="fa fa-navicon"></i> Menu</span>
-<span ng-click="hideNav()" ng-show="open"><i class="fa fa-close"></i></span>
+<div ng-show="show_nav_header" class="toggle-btn" sticky-nav>
+<span ng-click="showNav($event)" ng-show="!open"><i class="fa fa-navicon"></i> Menu</span>
+<span ng-click="hideNav($event)" ng-show="open"><i class="fa fa-close"></i></span>
 </div>
 <nav class="navbar-default"  ng-class="{expanded: open, collapsed: !open}" ng-show="show_nav_header">
 <div class="container">
-<div id="navbar" class="navbar-collapse collapse">
+<div id="navbar" class="navbar-collapse collapse" >
 
     <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><i class="fa fa-area-chart"></i>Dashboard</a></li>
-            <li><a href="#" ><i class="fa fa-group"></i>Inmates</a></li>
+            <li ng-class="{active: dashboard}"><a ui-sref="home"><i class="fa fa-area-chart"></i>Dashboard</a></li>
+            <li ng-class="{active: inmates}"><a ui-sref="inmates"><i class="fa fa-group"></i>Inmates</a></li>
             <li><a href="#contact"><i class="fa fa-files-o"></i>Facilities</a></li>
 			<li><a href="#contact"><i class="fa fa-file-text"></i>Letters</a></li>
 			<li><a href="#contact"><i class="fa fa-dollar"></i>Donate</a></li>
@@ -57,7 +75,7 @@
  
 
   <!-- this is where content will be injected -->
-    <div ui-view autoscroll="false" class="container" style="min-height:470px;"></div>
+    <div ui-view autoscroll="false" class="container website-wrap"></div>
     
  <!--Footer Starts-->
   <div class="row" id="footer">

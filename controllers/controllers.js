@@ -2,6 +2,8 @@ var app = angular.module('Controllers', []);
 
 app.controller('LoginController', ['$scope', '$http', '$location', '$rootScope', 'ipCookie', 'ipCookie', 'registerAndAuth', function($scope, $http, $location, $rootScope, ipCookie, ipCookie, registerAndAuth){
 	$rootScope.show_nav_header = false;
+	
+
    /* $scope.dataLoading = false;
     if(typeof $rootScope.Globals!== 'undefined' && $rootScope.Globals.hasOwnProperty("username")){
         $location.path('home');
@@ -29,59 +31,48 @@ app.controller('LoginController', ['$scope', '$http', '$location', '$rootScope',
     }*/
 }]);
 
-app.controller('indexController', ['$scope', '$http', '$rootScope', '$location', '$window', 'registerAndAuth', function($scope, $http, $rootScope, $location, $window, registerAndAuth){
-$scope.$window = $window;
+app.controller('indexController', ['$scope', '$http', '$rootScope', '$location', '$document', '$window', 'registerAndAuth', function($scope, $http, $rootScope, $location, $document, $window, registerAndAuth){
 $rootScope.show_nav_header = true;
 $scope.open = false;
 
-$scope.showNav = function(){
+$scope.showNav = function($event){
     $scope.open = true;
-   
+   $event.stopPropagation();
 }
-$scope.hideNav = function(){
+$scope.hideNav = function($event){
     $scope.open = false;
+   $event.stopPropagation(); 
+}
+var documentClickHandler = function (event) {
     
-}
-
-/*$scope.toggleNav = function () {
-            console.log('toggle')
-            $scope.open = !$scope.open;
-
-            if ($scope.open) {
-                $scope.$window.onclick = function (event) {
-                    alert('asd');
-                    $scope.open = false;
-                   // closeSearchWhenClickingElsewhere(event, $scope.toggleNav);
-                };
-            } else {
-                $scope.open = false;
-                $scope.$window.onclick = null;
-                $scope.$apply();
-            }
+   /* document.getElementsByClassName('navbar-default')[0].classList.remove('expanded');
+    document.getElementsByClassName('navbar-default')[0].classList.add('collapsed');*/
+    if($scope.open==true){
+    $scope.$apply(function(){
+        $scope.open = false;
+    });
+    }
+  //  console.log('asasd '+$scope.open);
 };
-*/
-function closeSearchWhenClickingElsewhere(event, callbackOnClose) {
-            var clickedElement = event.target;
-            if (!clickedElement) return;
 
-            var elementClasses = clickedElement.classList;
-            console.log(elementClasses);
-            var clickedOnSearchDrawer = elementClasses.contains('navbar-default');
-
-            if (!clickedOnSearchDrawer) {
-                callbackOnClose();
-                return;
-            }
-
-}
+  $document.on("click", documentClickHandler);
+  
+  $scope.$watch(function () {
+    return $window.scrollY;
+}, function (scrollY) {
+    console.log(scrollY);
+});
 }]);
 
 app.controller('HomeController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
 
 }]);
 
-app.controller('AboutController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
-
+app.controller('NewuserController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+$scope.show_modal = false;
+$scope.show_modal_popup = function(){
+	$scope.show_modal = !$scope.show_modal;
+}
 
 }]);
 
@@ -89,8 +80,44 @@ app.controller('ContactController', ['$scope', '$http', '$rootScope', '$location
 
 
 }]);
+app.controller('UserValidationFormController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+
+
+}]);
+
+app.controller('DefaultController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+$rootScope.show_nav_header = false;
+
+}]);
+app.controller('ForgotPasswordController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+$rootScope.show_nav_header = false;
+
+}]);
+app.controller('VisitationRequestDetailsController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+$rootScope.show_nav_header = false;
+
+}]);
+
+app.controller('InmatesController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+
+
+}]);
+
+app.controller('InmatePostsController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+
+
+}]);
+app.controller('InmateSearchResultController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+
+
+}]);
+app.controller('InmateProfileController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+
+
+}]);
 
 app.controller('RegisterController', ['$scope', '$http', '$rootScope', '$location', 'registerAndAuth', function($scope, $http, $rootScope, $location, registerAndAuth){
+	$rootScope.show_nav_header = false;
     /*console.log($rootScope.Main_Url);   
     $scope.dataLoading = false;
     $scope.register = function(){

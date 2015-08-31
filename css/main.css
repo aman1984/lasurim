@@ -6,6 +6,36 @@
 */
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,400,700);
+button,
+a {
+  cursor: pointer;
+}
+.primary-btn {
+  background: #221e1f none repeat scroll 0 0;
+  border: medium none;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.primary-btn:hover {
+  background: #ff7f00 none repeat scroll 0 0;
+}
+.secondary-btn {
+  background: #ff7f00 none repeat scroll 0 0;
+  border: medium none;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.secondary-btn:hover {
+  background: #c2c2c2 none repeat scroll 0 0;
+}
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f9f9f9;
@@ -15,6 +45,14 @@ body {
   display: block;
   margin: 0;
   padding: 0;
+}
+.website-wrap {
+  min-height: 100%;
+  position: relative;
+}
+.page-global {
+  background: #ffffff none repeat scroll 0 0;
+  margin-bottom: 15px;
 }
 .btn-group-vertical > .btn-group:after,
 .btn-toolbar:after,
@@ -33,9 +71,8 @@ body {
 .row:after {
   clear: both;
 }
-button,
-a {
-  cursor: pointer;
+.warning {
+  color: #ff0000;
 }
 .spacer {
   float: left;
@@ -73,6 +110,9 @@ img {
 }
 p {
   margin: 0 0 10px;
+}
+textarea {
+  height: auto!important;
 }
 ul,
 ol {
@@ -240,17 +280,6 @@ label {
   -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-button.primary-btn {
-  background: #221e1f none repeat scroll 0 0;
-  border: medium none;
-  box-shadow: none;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 10px 15px;
-}
-button.primary-btn:hover {
-  background: #ff7f00 none repeat scroll 0 0;
 }
 .row.page-login-reg {
   background: #ffffff none repeat scroll 0 0;
@@ -593,6 +622,149 @@ button.primary-btn:hover {
 }
 .card > span a:hover {
   color: #221e1f;
+}
+.register-wrap {
+  margin: 0 auto;
+  float: none;
+}
+.login-wrap {
+  margin: 0 auto;
+  float: none;
+}
+.f-pswd-f a {
+  vertical-align: middle;
+  text-decoration: none;
+  color: #221e1f;
+  margin: 27px 0 0 0;
+  display: block;
+}
+.f-pswd-f a:hover {
+  color: #ff7f00;
+}
+.global-wrap {
+  margin: 0 auto;
+  float: none;
+}
+.row.page-new-user {
+  background: #ffffff none repeat scroll 0 0;
+  margin-bottom: 15px;
+}
+.new-user-wrap h3 a {
+  padding: 5px 5px;
+}
+.page-inmates {
+  background: #ffffff;
+  padding-bottom: 20px;
+}
+.inmates-wrap {
+  margin: 0 auto;
+  float: none;
+}
+ul.inmate-listing li {
+  padding: 10px 0;
+  list-style: none;
+  font-size: 15px;
+}
+.inmate-cont {
+  padding: 10px 5px;
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  float: none;
+}
+.inmate-cont a {
+  color: #ed5565;
+  text-decoration: none;
+}
+.inmate-cont a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.inmate-cont .red {
+  background: #ffffff;
+  color: #ed5565;
+  font-size: 18px;
+}
+.inmate-cont span {
+  font-size: 13px;
+}
+.inmate-profile ul.inmate-listing li label {
+  width: 20%;
+  background: #fcfcfc;
+  padding: 10px 8px;
+}
+.inmate-profile ul.inmate-listing li span {
+  background: #f9f9f9;
+  padding: 10px 8px;
+  display: inline-block;
+  width: 75%;
+  font-size: 13px;
+}
+.profile-pg {
+  margin: 0 auto;
+  float: none;
+}
+.post-heading {
+  background-color: #221e1f;
+  color: #ffffff;
+  font-size: 23px;
+  margin-bottom: 2px;
+  padding: 8px 5px;
+}
+.post-box {
+  background-color: #ffffff;
+  display: inline-block;
+  color: #221e1f;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.post-box a.read {
+  background-color: #ff7f00;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px;
+  margin-top: 10px;
+  display: inline-block;
+  float: right;
+}
+.post-box a:hover.read {
+  background-color: #221e1f;
+  text-decoration: none;
+  color: #ffffff;
+}
+.post-box .post_img {
+  float: left;
+  margin-right: 10px;
+  width: 22%;
+}
+.post-box p {
+  float: right;
+  width: 76%;
+}
+.pagination {
+  display: inline-block;
+}
+.pagination ul {
+  padding: 0;
+  margin: 0;
+}
+.pagination ul li {
+  display: inline;
+  padding: 0 5px;
+}
+.pagination ul li a.active {
+  background-color: #221e1f;
+  color: #ffffff;
+}
+.pagination ul li a {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #221e1f;
+  padding: 5px 12px;
+  text-decoration: none;
+}
+.pagination ul li a:hover {
+  background: #ff7f00;
 }
 
 /*# sourceMappingURL=main.css.map */

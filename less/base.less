@@ -8,10 +8,16 @@ body {
   margin: 0;
   padding: 0;
 }
+.website-wrap{min-height:100%;position:relative;}
+.page-global {
+    background: #ffffff none repeat scroll 0 0;
+    margin-bottom: 15px;
+}
+
 .btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
   clear: both;
 }
-button, a{cursor:pointer;}
+.warning{color:@warning;}
 .spacer {
     float: left;
     padding: 15px 0;
@@ -49,6 +55,7 @@ img {
 p {
   margin: 0 0 10px;
 }
+textarea{height:auto!important;}
 ul,
 ol {
   margin-top: 0;
@@ -178,15 +185,7 @@ label {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-button.primary-btn{
-    background:@btn-primary-color none repeat scroll 0 0;
-    border: medium none;
-    box-shadow: none;
-    color: @white;
-    font-size: 16px;
-    padding: 10px 15px;
-}
-button.primary-btn:hover{ background: @primary none repeat scroll 0 0;}
+
 .row.page-login-reg {
     background: #ffffff none repeat scroll 0 0;
     margin-bottom: 15px;

@@ -1,49 +1,143 @@
-    <div class="jumbotron">
-      <div class="container">
-        <div class="col-xs-offset-2 col-xs-8">
-<div ng-show="error" class="alert alert-danger">{{error}}</div>
-<form name="form" ng-submit="register()" role="form">
-    <div class="form-group" ng-class=" { 'has-error' : form.fullname.$invalid && !form.fullname.$pristine}">
-        <label for="fullname">Name</label>
-        <i class="fa fa-key"></i>
-        <input type="text" name="fullname" id="fullname" class="form-control" ng-model="fullname" required />
-        <span ng-show="form.fullname.$error.required && form.fullname.$touched" class="help-block">Name is required</span>
-    </div>
-    <div class="form-group" ng-class=" { 'has-error' : form.username.$invalid && !form.username.$pristine}">
-        <label for="username">Username</label>
-        <i class="fa fa-key"></i>
-        <input type="text" name="username" id="username" class="form-control" ng-model="username" ng-minlength="5" required />
-        <span ng-show="form.username.$touched && form.username.$error.required" class="help-block">Username is required</span>
-        <span ng-if="!form.username.$error.required" ng-show="form.username.$invalid && !form.username.$pristine" class="help-block">Username should be atleast 5 characters</span>
-    </div>
-    <div class="form-group" ng-class=" { 'has-error' : form.email.$invalid && !form.email.$pristine}">
-        <label for="email">Email</label>
-        <i class="fa fa-key"></i>
-        <input type="email" name="email" id="email" class="form-control" ng-model="email" required />
-        <span ng-show="form.email.$touched && form.email.$error.required" class="help-block">Email is required</span>
-        <span ng-if="!form.email.$error.required" ng-show="form.email.$invalid && !form.email.$pristine" class="help-block">Enter a valid email id</span>
-    </div>
-    <div class="form-group" ng-class=" { 'has-error' : form.password.$invalid && !form.password.$pristine}">
-        <label for="password">Password</label>
-        <i class="fa fa-lock"></i>
-        <input type="password" name="password" id="password" class="form-control" ng-model="password" validate-must-equal-to="confirm_password" required ng-minlength="6" />
-        <span ng-show="form.password.$touched && form.password.$error.required" class="help-block">Password is required</span>
-        <span ng-if="!form.password.$error.required" ng-show="form.password.$invalid && !form.password.$pristine" class="help-block">Enter atleast 6 characters</span>
-    </div>
-    <div class="form-group" ng-class=" { 'has-error' : form.confirm_password.$invalid && !form.confirm_password.$pristine}">
-        <label for="confirm_password">Confirm Password</label>
-        <i class="fa fa-lock"></i>
-        <input type="password" name="confirm_password" id="confirm_password" class="form-control" ng-model="confirm_password" compare-to="password" validate-must-equal-to="password" required ng-minlength="6" />
-        <span ng-show="form.confirm_password.$touched && form.confirm_password.$error.required" class="help-block">Confirm Password is required</span>
-        <span ng-if="!form.confirm_password.$error.required" ng-show="form.confirm_password.$invalid && !form.confirm_password.$pristine" class="help-block">Must match the password</span>
-    </div>
-    <div class="form-actions">
-        <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-success">Register</button>
-        <a ui-sref="login" class="btn btn-link">Cancel</a>
-        <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
-    </div>
-</form>
+<div class="row login-header">
+<a href="#"><img src="assets/images/lasurim-logo.png" alt="logo"/></a>
+</div>
+<div class="row page-login-reg">
 
-</div>
-</div>
-</div>
+<!--Registration Form -->
+<div class="my-grid-6 register-wrap">
+				<h2 class="text-center head-h" style="color:#ff7f00; font-size:30px;padding-bottom:30px;">Registration</h2>
+				
+				<div class="form-group my-grid-6">
+					<label>First Name</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group my-grid-6">
+					<label>Last Name</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group my-grid-12">
+					<label>Username</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group my-grid-12">
+					<label>Password</label>
+					<input type="password" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group my-grid-12">
+					<label>Confirm Password</label>
+					<input type="password" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group my-grid-12">
+					<label>Address</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>
+				
+				<div class="form-group my-grid-12">
+					<label>Address Line 2</label>
+					<input type="text" name="" class="form-control" id="" value="">
+				</div>
+								
+				<div class="form-group my-grid-6">
+					<label>City</label>
+					<select name="" class="form-control" id="" value="">
+					<option>Select your city</option>
+					<option>New York</option>
+					<option>Los Angeles</option>
+					<option>Houston</option>
+					<option>Chicago</option>
+					<option>San Diego</option>
+					<option>Dallas</option>
+					<option>Seattle</option>
+					<select>
+				</div>
+				
+				<div class="form-group my-grid-6">
+					<label>State</label>
+					<select name="" class="form-control" id="" value="">
+					<option>Select your state</option>
+					<option>New York</option>
+					<option>California</option>
+					<option>Texas</option>
+					<option>Illinois</option>
+					<option>Washington</option>
+					<select>
+				</div>
+				
+				<div class="form-group my-grid-12">
+					<label>Email Address</label>
+					<input type="email" name="" class="form-control" id="" value="">
+				</div>	
+                <div class="form-group my-grid-12">
+					<label>Date of Birth</label>
+				</div>
+                <div class="form-group my-grid-4">
+					<label>Day</label>
+					<select name="" class="form-control" id="" value="">
+					<option>Select Day</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<select>
+				</div>				
+				
+				<div class="form-group my-grid-4">
+					<label>Month</label>
+					<select name="" class="form-control" id="" value="">
+					<option>Select Month</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<select>
+				</div>
+
+               <div class="form-group my-grid-4">
+					<label>Year</label>
+					<select name="" class="form-control" id="" value="">
+					<option>Select Year</option>
+					<option>1988</option>
+					<option>1989</option>
+					<option>1990</option>
+					<option>1991</option>
+					<option>1992</option>
+					<option>1993</option>
+					<option>1994</option>
+					<option>1995</option>
+					<option>1996</option>
+					<option>1997</option>
+					<option>1998</option>
+					<option>1999</option>
+					<select>
+				</div>				
+				
+				<div class="my-grid-6">
+					
+				</div>
+
+				<div class="my-grid-6 text-right">
+				<div class="spacer-small"></div>
+					<button type="submit" class="primary-btn">Sign Up</button>
+				</div>				
+			
+			</div>
+			
+		<div class="spacer"></div>
+<div class="spacer"></div>
+</div>			
